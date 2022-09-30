@@ -35,27 +35,19 @@
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
-            <phase>generate-resources</phase>
+            <phase>generate-sources</phase>
+            <configuration>
+              <nodeVersion>${node.version}</nodeVersion>
+            </configuration>
           </execution>
           <execution>
-            <id>npm run build</id>
+            <id>npm install</id>
             <goals>
               <goal>npm</goal>
             </goals>
             <configuration>
-              <arguments>run build</arguments>
+              <arguments>install</arguments>
             </configuration>
-            <phase>generate-resources</phase>
-          </execution>
-          <execution>
-            <id>npm run clean</id>
-            <goals>
-              <goal>npm</goal>
-            </goals>
-            <configuration>
-              <arguments>run clean</arguments>
-            </configuration>
-            <phase>clean</phase>
           </execution>
         </executions>
       </plugin>
